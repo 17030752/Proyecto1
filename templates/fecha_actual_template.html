@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><!--  asi se incrustan plantillas -->
+    {% include "components/barra.html" %}
+        <h1>la fecha actual es: {{fecha}} </h1>
+        <!-- los bucles y condicionales van en 1par parentesis percentage condition percentage parentesis las var en 2par parenthesis -->
+        <p>
+            <ul>
+            {% if feriados %}
+                 {%for dia in feriados %}
+                 <!-- los filtros se escriben con el pipe operator -->
+                     <li>{{dia|upper}}</li>
+                 {% endfor %}
+            {% else %}
+                 <p> no hay dias feriados </p>
+            {% endif %}
+            </ul>
+        </p>
+</body>
+</html>
